@@ -2,7 +2,7 @@
 const recipes = {
     CreamyAlfredoPasta: {
         title: "Creamy Alfredo Pasta",
-        image: "images/pasta.jpg",
+        image: "pasta.jpg",
         ingredients: [
             "200g penne pasta",
             "1 cup heavy cream",
@@ -19,7 +19,7 @@ const recipes = {
     },
     PizzaMargherita: {
         title: "Pizza Margherita",
-        image: "images/pizza.jpg",
+        image: "pizza.jpg",
         ingredients: [
             "Pizza dough",
             "1/2 cup tomato sauce",
@@ -36,7 +36,7 @@ const recipes = {
     },
     VegHakkaNoodles: {
         title: "Veg Hakka Noodles",
-        image: "images/noodles.jpg",
+        image: "noodles.jpg",
         ingredients: [
             "200g Hakka noodles",
             "1 cup mixed vegetables",
@@ -53,7 +53,7 @@ const recipes = {
     },
     GobiManchurian: {
         title: "Gobi Manchurian",
-        image: "images/manchurian.jpg",
+        image: "manchurian.jpg",
         ingredients: [
             "1 small cauliflower (cut into florets)",
             "1/2 cup cornflour",
@@ -76,7 +76,7 @@ const recipes = {
     },
     GreekSalad: {
         title: "Greek Salad",
-        image: "images/salad.jpg",
+        image: "salad.jpg",
         ingredients: [
             "1 cucumber (chopped)",
             "2 tomatoes (chopped)",
@@ -97,7 +97,7 @@ const recipes = {
     },
     ChholeBh: {
         title: "Chhole Bhature",
-        image: "images/cholebhat.jpg",
+        image: "cholebhat.jpg",
         ingredients: [
             "1 cup chickpeas (soaked overnight)",
             "2 onions, chopped",
@@ -120,7 +120,7 @@ const recipes = {
     },
     MasalaDosa: {
         title: "Masala Dosa",
-        image: "images/dosa.jpg",
+        image: "dosa.jpg",
         ingredients: [
             "2 cups dosa batter",
             "2 boiled potatoes",
@@ -140,7 +140,7 @@ const recipes = {
     },
     IdliSambhar: {
         title: "Idli Sambhar",
-        image: "images/idli.jpg",
+        image: "idli.jpg",
         ingredients: [
             "2 cups idli batter",
             "1 cup toor dal",
@@ -161,7 +161,7 @@ const recipes = {
     },
     ChocolateLavaCake: {
         title: "Chocolate Lava Cake",
-        image: "images/dessert.jpg",
+        image: "dessert.jpg",
         ingredients: [
             "100g dark chocolate",
             "1/4 cup butter",
@@ -180,7 +180,7 @@ const recipes = {
     },
     GulabJamun: {
         title: "Gulab Jamun",
-        image: "images/gulabjamun.jpg",
+        image: "gulabjamun.jpg",
         ingredients: [
             "1 cup milk powder",
             "1/4 cup all-purpose flour",
@@ -241,4 +241,5 @@ cards.forEach(card => {
 closeBtn.onclick = () => (modal.style.display = "none");
 window.onclick = e => {
     if (e.target == modal) modal.style.display = "none";
+
 };

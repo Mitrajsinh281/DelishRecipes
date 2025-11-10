@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Recipes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo"><i class="fa-solid fa-utensils"></i>Delish Recipes</div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+            <li><a href="search.html"><i class="fa-solid fa-magnifying-glass"></i>Search Recipe</a></li>
+            <li><a href="recipe.html"><i class="fa-solid fa-list"></i>List of Recipes</a></li>
+            <li><a href="support.html"><i class="fa-solid fa-user-tie"></i>Support</a></li>
+        </ul>
+    </nav>
+
+    <section class="recipes-list">
+        <h2>All Recipes</h2>
+        <div class="recipe-grid">
+            <div class="recipe-card" data-recipe="CreamyAlfredoPasta">
+                <img src="images/pasta.jpg" alt="Creamy Alfredo Pasta">
+                <h3>Creamy Alfredo Pasta</h3>
+                <p>Rich and creamy pasta</p>
+            </div>
+
+            <div class="recipe-card" data-recipe="PizzaMargherita">
+                <img src="images/pizza.jpg" alt="Pizza Margherita">
+                <h3>Pizza Margherita</h3>
+                <p>Cheesy and classic Italian pizza.</p>
+            </div>
+
+            <div class="recipe-card" data-recipe="VegHakkaNoodles">
+                <img src="images/noodles.jpg" alt="Veg Hakka Noodles">
+                <h3>Veg Hakka Noodles</h3>
+                <p>Stir-fried noodles with crunchy veggies.</p>
+            </div>
+
+            <div class="recipe-card" data-recipe="GobiManchurian">
+                <img src="images/manchurian.jpg" alt="Gobi Manchurian">
+                <h3>Gobi Manchurian</h3>
+                <p>Crispy cauliflower tossed in spicy sauce.</p>
+            </div>
+
+            <div class="recipe-card" data-recipe="GreekSalad">
+                <img src="images/salad.jpg" alt="Greek Salad">
+                <h3>Greek Salad</h3>
+                <p>Healthy, fresh and quick to make.</p>
+            </div>
+
+            <div class="recipe-card" data-recipe="ChholeBh">
+                <img src="images/cholebhat.jpg" alt="Chhole Bhature">
+                <h3>Chhole Bhature</h3>
+                <p>Spicy chickpeas served with fluffy bhature.</p>
+            </div>
+
+            <div class="recipe-card" data-recipe="MasalaDosa">
+                <img src="images/dosa.jpg" alt="Masala Dosa">
+                <h3>Masala Dosa</h3>
+                <p>Golden crispy dosa with spicy potato filling.</p>
+            </div>
+
+            <div class="recipe-card" data-recipe="IdliSambhar">
+                <img src="images/idli.jpg" alt="Idli Sambhar">
+                <h3>Idli Sambhar</h3>
+                <p>Soft steamed idlis with tangy sambhar.</p>
+            </div>
+
+            <div class="recipe-card" data-recipe="ChocolateLavaCake">
+                <img src="images/dessert.jpg" alt="Chocolate Lava Cake">
+                <h3>Chocolate Lava Cake</h3>
+                <p>Perfect gooey chocolate dessert.</p>
+            </div>
+            <div class="recipe-card" data-recipe="GulabJamun">
+                <img src="images/gulabjamun.jpg" alt="Gulab Jamun">
+                <h3>Gulab Jamun</h3>
+                <p>Soft golden dumplings soaked in sugar syrup.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hidden details modal -->
+<div id="recipeModal" class="recipe-modal">
+  <div class="recipe-content">
+    <span class="close">&times;</span>
+    <h2 id="modalTitle"></h2>
+    <img id="modalImage" src="" alt="" />
+    <h3>Ingredients</h3>
+    <ul id="modalIngredients"></ul>
+    <h3>Steps</h3>
+    <ol id="modalSteps"></ol>
+  </div>
+</div>
+
+<script src="recipe.js"></script>
+
+</body>
+
+</html>

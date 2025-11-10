@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Carattere&family=Honk&family=Kaushan+Script&family=Meow+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Tangerine:wght@400;700&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap');
+
+/* General Page Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom, #a8ff78, #78ffd6);;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    padding: 5px 20px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.nav-links a:hover {
+    color: #032e19;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.275), rgba(0, 0, 0, 0.365)), url('images/spices.jpg') center/cover no-repeat;
+    /* background: url(images/spices.jpg) center/cover no-repeat; */
+    color: white;
+    height: 800px;
+    font-size: 20px;
+}
+
+.btn {
+    background-color: #fff;
+    color: #0a3e7a;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #b4ddff;
+}
+
+/*search-section*/
+.search input {
+    width: 80%;
+    /* Adjust width (e.g., 50%, 80%, or fixed px like 400px) */
+    max-width: 500px;
+    /* Optional: limits width on large screens */
+    height: 35px;
+    /* Adjust height */
+    padding: 10px 15px;
+    /* Adds inner spacing */
+    font-size: 16px;
+    /* Increases text size */
+
+}
+
+.search {
+    text-align: center;
+    background: linear-gradient(to bottom, #a8ff78, #78ffd6);
+    padding: 40px 0;
+}
+
+.search h2 {
+    text-decoration: underline solid 5px;
+    color: #dd3838;
+    font-size: 30px;
+}
+
+/* Recipes */
+.recipe-card {
+    /* background: linear-gradient(to bottom, #a8ff78, #78ffd6); */
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(147, 150, 34, 0.431);
+    margin: 40px;
+    text-align: center;
+    transition: transform 0.2s;
+    width: 800px;
+    justify-content: center;
+    align-items: center;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+.recipe-card:hover {
+    transform: scale(1.05);
+}
+
+.recipe-grid {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: linear-gradient(to bottom, #a8ff78, #78ffd6);
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.recipe-card h3 {
+    color: rgb(217, 44, 44);
+    margin: 10px 0 5px;
+}
+
+.recipe-card p {
+    color: rgba(0, 0, 0, 0.77);
+    font-size: 20px;
+}
+
+/* Modal styling */
+.recipe-modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.recipe-content {
+  background: #cb5959;
+  margin: 50px auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  animation: fadeIn 0.3s ease;
+}
+
+.recipe-content img {
+  width: 100%;
+  border-radius: 8px;
+}
+.recipe-content{
+    color: white;
+}
+
+.close {
+  float: right;
+  font-size: 25px;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Contact Page */
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    width: 400px;
+}
+
+.contact h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+textarea {
+    width: 95%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #3cb371;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 350px;
+}
+
+button:hover {
+    background-color: #050b5c;
+}
+
+.meadd {
+    width: 100%;
+    margin: 50px auto;
+    text-align: center;
+    font-size: 20px;
+}

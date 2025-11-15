@@ -2,7 +2,8 @@
 const recipes = {
     CreamyAlfredoPasta: {
         title: "Creamy Alfredo Pasta",
-        image: "pasta.jpg",
+        category:"Italian",
+        image: "images/pasta.jpg",
         ingredients: [
             "200g penne pasta",
             "1 cup heavy cream",
@@ -19,7 +20,8 @@ const recipes = {
     },
     PizzaMargherita: {
         title: "Pizza Margherita",
-        image: "pizza.jpg",
+        category:"Italian",
+        image: "images/pizza.jpg",
         ingredients: [
             "Pizza dough",
             "1/2 cup tomato sauce",
@@ -36,7 +38,8 @@ const recipes = {
     },
     VegHakkaNoodles: {
         title: "Veg Hakka Noodles",
-        image: "noodles.jpg",
+        category:"Chinese",
+        image: "images/noodles.jpg",
         ingredients: [
             "200g Hakka noodles",
             "1 cup mixed vegetables",
@@ -53,7 +56,8 @@ const recipes = {
     },
     GobiManchurian: {
         title: "Gobi Manchurian",
-        image: "manchurian.jpg",
+        category:"Chinese",
+        image: "images/manchurian.jpg",
         ingredients: [
             "1 small cauliflower (cut into florets)",
             "1/2 cup cornflour",
@@ -76,7 +80,8 @@ const recipes = {
     },
     GreekSalad: {
         title: "Greek Salad",
-        image: "salad.jpg",
+        category: "Salad",
+        image: "images/salad.jpg",
         ingredients: [
             "1 cucumber (chopped)",
             "2 tomatoes (chopped)",
@@ -97,7 +102,8 @@ const recipes = {
     },
     ChholeBh: {
         title: "Chhole Bhature",
-        image: "cholebhat.jpg",
+        category:"Punjabi",
+        image: "images/cholebhat.jpg",
         ingredients: [
             "1 cup chickpeas (soaked overnight)",
             "2 onions, chopped",
@@ -120,7 +126,8 @@ const recipes = {
     },
     MasalaDosa: {
         title: "Masala Dosa",
-        image: "dosa.jpg",
+        category:"SouthIndian",
+        image: "images/dosa.jpg",
         ingredients: [
             "2 cups dosa batter",
             "2 boiled potatoes",
@@ -140,7 +147,8 @@ const recipes = {
     },
     IdliSambhar: {
         title: "Idli Sambhar",
-        image: "idli.jpg",
+        category:"SouthIndian",
+        image: "images/idli.jpg",
         ingredients: [
             "2 cups idli batter",
             "1 cup toor dal",
@@ -161,7 +169,8 @@ const recipes = {
     },
     ChocolateLavaCake: {
         title: "Chocolate Lava Cake",
-        image: "dessert.jpg",
+        category: "Dessert",
+        image: "images/dessert.jpg",
         ingredients: [
             "100g dark chocolate",
             "1/4 cup butter",
@@ -180,7 +189,8 @@ const recipes = {
     },
     GulabJamun: {
         title: "Gulab Jamun",
-        image: "gulabjamun.jpg",
+        category: "Dessert",
+        image: "images/gulabjamun.jpg",
         ingredients: [
             "1 cup milk powder",
             "1/4 cup all-purpose flour",
@@ -203,43 +213,93 @@ const recipes = {
 
 };
 
-// Select elements
-const cards = document.querySelectorAll(".recipe-card");
-const modal = document.getElementById("recipeModal");
-const closeBtn = document.querySelector(".close");
+// --- Create Category Dropdown ---
+function createCategoryDropdown() {
+  const select = document.getElementById("categorySelect");
+  const categories = ["All", ...new Set(Object.values(recipes).map(r => r.category))];
 
-// Open recipe modal
-cards.forEach(card => {
+  select.innerHTML = "";
+  categories.forEach(cat => {
+    const option = document.createElement("option");
+    option.value = cat;
+    option.textContent = cat;
+    select.appendChild(option);
+  });
+
+  select.addEventListener("change", e => {
+    filterByCategory(e.target.value);
+  });
+}
+
+// --- Display Recipes ---
+function displayRecipes(category = "All") {
+  const container = document.getElementById("recipeContainer");
+  container.innerHTML = "";
+
+  const filtered = category === "All"
+    ? Object.entries(recipes)
+    : Object.entries(recipes).filter(([_, r]) => r.category === category);
+
+  filtered.forEach(([key, recipe]) => {
+    const card = document.createElement("div");
+    card.classList.add("recipe-card");
+    card.dataset.recipe = key;
+    card.innerHTML = `
+      <img src="${recipe.image}" alt="${recipe.title}">
+      <h3>${recipe.title}</h3>
+      <p>${recipe.category}</p>
+    `;
+    container.appendChild(card);
+  });
+
+  addRecipeCardListeners();
+}
+
+// --- Filter Recipes ---
+function filterByCategory(category) {
+  displayRecipes(category);
+}
+
+// --- Modal Functionality ---
+function addRecipeCardListeners() {
+  const cards = document.querySelectorAll(".recipe-card");
+  const modal = document.getElementById("recipeModal");
+  const closeBtn = document.querySelector(".close");
+
+  cards.forEach(card => {
     card.addEventListener("click", () => {
-        const recipeKey = card.dataset.recipe;
-        const recipe = recipes[recipeKey];
+      const recipe = recipes[card.dataset.recipe];
+      document.getElementById("modalTitle").textContent = recipe.title;
+      document.getElementById("modalImage").src = recipe.image;
 
-        document.getElementById("modalTitle").textContent = recipe.title;
-        document.getElementById("modalImage").src = recipe.image;
+      const ingList = document.getElementById("modalIngredients");
+      ingList.innerHTML = "";
+      recipe.ingredients.forEach(i => {
+        const li = document.createElement("li");
+        li.textContent = i;
+        ingList.appendChild(li);
+      });
 
-        const ingList = document.getElementById("modalIngredients");
-        ingList.innerHTML = "";
-        recipe.ingredients.forEach(i => {
-            const li = document.createElement("li");
-            li.textContent = i;
-            ingList.appendChild(li);
-        });
+      const stepList = document.getElementById("modalSteps");
+      stepList.innerHTML = "";
+      recipe.steps.forEach(s => {
+        const li = document.createElement("li");
+        li.textContent = s;
+        stepList.appendChild(li);
+      });
 
-        const stepList = document.getElementById("modalSteps");
-        stepList.innerHTML = "";
-        recipe.steps.forEach(s => {
-            const li = document.createElement("li");
-            li.textContent = s;
-            stepList.appendChild(li);
-        });
-
-        modal.style.display = "block";
+      modal.style.display = "block";
     });
-});
+  });
 
-// Close modal
-closeBtn.onclick = () => (modal.style.display = "none");
-window.onclick = e => {
+  closeBtn.onclick = () => (modal.style.display = "none");
+  window.onclick = e => {
     if (e.target == modal) modal.style.display = "none";
+  };
+}
 
+// --- Initialize ---
+window.onload = () => {
+  createCategoryDropdown();
+  displayRecipes();
 };

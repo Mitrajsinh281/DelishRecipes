@@ -4,8 +4,8 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    height: 100vh;
-    background: linear-gradient(to bottom, #a8ff78, #78ffd6);;
+    background: linear-gradient(to bottom, #a8ff78, #78ffd6);
+    ;
 }
 
 /* Navbar */
@@ -14,34 +14,126 @@ body {
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(to right, #ff9966, #ff5e62);
-    padding: 5px 20px;
+    padding: 12px 30px;
     color: #fff;
-    font-size: 15px;
+    font-size: 18px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 30px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: #fff;
     font-weight: 500;
-    font-size: 25px;
+    font-size: 18px;
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
-    color: #032e19;
+    color: #ffe4d6;
+    transform: scale(1.05);
 }
+
+/*fade In*/
+.fade-in {
+    animation: fadeIn 1.2s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* New Sections Styling */
+
+/* Popular Recipes*/
+.popular {
+    padding: 60px 20px;
+    text-align: center;
+    background: #fff;
+    margin: 40px auto;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.popular h2{
+    color: #d82b2b;
+    margin-bottom: 15px;
+    text-decoration: underline 5px solid #ff5e62;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.popular .recipe-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.popular .recipe-item {
+    width: 250px;
+    box-shadow: 0 3px 8px rgba(216, 43, 43, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background: linear-gradient(to bottom, #fff5f5, #ffeaea);
+}
+
+.popular .recipe-item:hover {
+    transform: scale(1.05);
+}
+
+.popular .recipe-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.popular .recipe-item h3 {
+    margin: 12px 0;
+    color: #b23131;
+    font-family: 'Pacifico', cursive;
+}
+
+/* Fade-in animation for sections (already defined globally, just delay for each) */
+
+.popular.fade-in {
+    animation-delay: 0.6s;
+}
+
+.testimonials.fade-in {
+    animation-delay: 0.9s;
+}
+
 
 /* Hero Section */
 .hero {
     text-align: center;
     padding: 100px 20px;
     background: linear-gradient(rgba(0, 0, 0, 0.275), rgba(0, 0, 0, 0.365)), url('images/spices.jpg') center/cover no-repeat;
-    /* background: url(images/spices.jpg) center/cover no-repeat; */
     color: white;
     height: 800px;
     font-size: 20px;
@@ -85,6 +177,12 @@ body {
     text-decoration: underline solid 5px;
     color: #dd3838;
     font-size: 30px;
+}
+
+.search input:focus {
+    outline: none;
+    border-color: rgb(60, 239, 5);
+    box-shadow: 0 0 20px rgb(143, 230, 3);
 }
 
 /* Recipes */
@@ -137,55 +235,67 @@ body {
 
 /* Modal styling */
 .recipe-modal {
-  display: none; /* hidden by default */
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background: rgba(0, 0, 0, 0.6);
+    display: none;
+    /* hidden by default */
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .recipe-content {
-  background: #cb5959;
-  margin: 50px auto;
-  padding: 20px;
-  width: 80%;
-  max-width: 600px;
-  border-radius: 10px;
-  animation: fadeIn 0.3s ease;
+    background: #cb5959;
+    margin: 50px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    animation: fadeIn 0.3s ease;
 }
 
 .recipe-content img {
-  width: 100%;
-  border-radius: 8px;
+    width: 100%;
+    border-radius: 8px;
 }
-.recipe-content{
+
+.recipe-content {
     color: white;
 }
 
 .close {
-  float: right;
-  font-size: 25px;
+    float: right;
+    font-size: 25px;
 }
+
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
 /* Contact Page */
 .contact {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 50px;
+    margin: 50px auto;
 
     background: white;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     width: 400px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .contact h2 {
@@ -227,44 +337,83 @@ button:hover {
     margin: 50px auto;
     text-align: center;
     font-size: 20px;
+    animation: fadeIn 1s ease-in-out;
 }
 
-/* Small phones (like Galaxy A51, iPhone SE) */
-@media (max-width: 700px) {
-  .navbar {
-    padding: 20px 20px;
-    width: 170%;
-  }
-
-  .logo {
-    font-size: 1.1rem;
-  }
-
-  .nav-links {
-    align-items: flex-start;
-  }
-
-  .hero {
-    height: 75vh;
-  }
-
-  .hero h1 {
-    font-size: 1.6rem;
-  }
-
-  .hero p {
-    font-size: 0.9rem;
-  }
-
-.hero {
+.about-support {
+    width: fit-content;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(rgba(0, 0, 0, 0.275), rgba(0, 0, 0, 0.365)), url('images/spices.jpg') center/cover no-repeat;
-    /* background: url(images/spices.jpg) center/cover no-repeat; */
-    color: white;
-    height: 200vh;
-    font-size: 20px;
-    width: 170%;
+    animation: fadeIn 1s ease-in-out;
 }
 
+.about-support h2 {
+    font-size: 26px;
+    color: #d82b2b;
+    margin-bottom: 15px;
+    text-decoration: underline 4px solid #ff5e62;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.about-support p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 12px;
+}
+/* .about.fade-in {
+    animation-delay: 0.3s;
+} */
+
+
+/*catagorybutton*/
+.category-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.category-btn {
+    margin: 5px;
+    padding: 10px 18px;
+    background: #d83b0b;
+    width: 15%;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.category-btn:hover {
+    background: #ff5722;
+}
+
+/*DROPDOWN LIST*/
+.category-select-container {
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+#categorySelect {
+    padding: 10px 15px;
+    border-radius: 8px;
+    /* border: 2px solid #0a79e0; */
+    background: black;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.recipes-list h2 {
+    color: rgb(54, 38, 41);
+    margin-left: 20px;
+    text-decoration: underline 5px #e20c0c;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }

@@ -2,7 +2,7 @@
 const recipes = {
     CreamyAlfredoPasta: {
         title: "Creamy Alfredo Pasta",
-        category:"Italian",
+        category: "Italian",
         image: "images/pasta.jpg",
         ingredients: [
             "200g penne pasta",
@@ -20,7 +20,7 @@ const recipes = {
     },
     PizzaMargherita: {
         title: "Pizza Margherita",
-        category:"Italian",
+        category: "Italian",
         image: "images/pizza.jpg",
         ingredients: [
             "Pizza dough",
@@ -38,7 +38,7 @@ const recipes = {
     },
     VegHakkaNoodles: {
         title: "Veg Hakka Noodles",
-        category:"Chinese",
+        category: "Chinese",
         image: "images/noodles.jpg",
         ingredients: [
             "200g Hakka noodles",
@@ -56,7 +56,7 @@ const recipes = {
     },
     GobiManchurian: {
         title: "Gobi Manchurian",
-        category:"Chinese",
+        category: "Chinese",
         image: "images/manchurian.jpg",
         ingredients: [
             "1 small cauliflower (cut into florets)",
@@ -101,32 +101,121 @@ const recipes = {
         ]
     },
     ChholeBh: {
-        title: "Chhole Bhature",
-        category:"Punjabi",
-        image: "images/cholebhat.jpg",
+    title: "Chhole Bhature",
+    category: "Punjabi",
+    image: "images/cholebhat.jpg",
+    ingredients: [
+        "1 cup chickpeas (soaked overnight)",
+        "2 onions, chopped",
+        "2 tomatoes, pureed",
+        "1 tsp ginger-garlic paste",
+        "1 tsp garam masala",
+        "1 tsp cumin seeds",
+        "1 tsp red chilli powder",
+        "1/2 tsp turmeric",
+        "1/2 tsp amchur powder",
+        "1 tsp chole masala (optional)",
+        "Salt to taste",
+        "Oil for cooking",
+        
+        "For Bhature :",
+        "2 cups all-purpose flour (maida)",
+        "1/2 cup yogurt",
+        "1/4 tsp baking soda",
+        "1/2 tsp sugar",
+        "Salt to taste",
+        "Water as needed",
+        "Oil for deep frying"
+    ],
+    steps: [
+        "Pressure cook soaked chickpeas until soft.",
+        "Heat oil in a pan; add cumin seeds and let them splutter.",
+        "Add chopped onions and sauté until golden.",
+        "Add ginger-garlic paste and cook for a minute.",
+        "Add tomato puree, red chilli powder, turmeric, garam masala, and chole masala; cook until oil separates.",
+        "Add boiled chickpeas with some water and simmer for 10–15 minutes.",
+        "Add amchur powder, mix well, and turn off heat.",
+        
+        "For Bhature: Mix flour, sugar, salt, baking soda, and yogurt.",
+        "Knead into a soft dough using water as needed; rest for 1 hour.",
+        "Roll into medium-sized circles.",
+        "Deep fry in hot oil until fluffy and golden.",
+        
+        "Serve hot bhature with chhole, onions, and lemon."
+    ]
+},
+
+    PaneerTikkaMasala: {
+        title: "Paneer Tikka Masala",
+        category: "Punjabi",
+        image: "images/paneertikka.jpg",
         ingredients: [
-            "1 cup chickpeas (soaked overnight)",
-            "2 onions, chopped",
-            "2 tomatoes, pureed",
+            "250g paneer (cut into cubes)",
+            "1/2 cup thick curd (for marination)",
+            "1 tbsp gram flour (optional)",
             "1 tsp ginger-garlic paste",
+            "1 tsp red chilli powder",
+            "1/2 tsp turmeric powder",
             "1 tsp garam masala",
-            "2 cups flour (for bhature)",
-            "1/2 cup yogurt",
-            "Oil for frying",
+            "1 tsp coriander powder",
+            "1/2 tsp kasuri methi",
+            "1 tbsp lemon juice",
+            "1 onion, chopped",
+            "2 tomatoes, pureed",
+            "1 tbsp ginger-garlic paste (for gravy)",
+            "2 tbsp butter",
+            "1 tsp cumin seeds",
+            "1 bay leaf",
+            "1 tbsp fresh cream",
+            "1 tbsp oil",
             "Salt to taste"
         ],
         steps: [
-            "Pressure cook chickpeas until soft.",
-            "In a pan, sauté onions and ginger-garlic paste.",
-            "Add tomato puree and spices, cook till oil separates.",
-            "Add boiled chickpeas and simmer for 10 minutes.",
-            "Mix flour, yogurt, salt, and water to make dough; roll and deep fry to make bhature.",
-            "Serve hot with chhole and sliced onions."
+            "Mix curd, gram flour, ginger-garlic paste, lemon juice, and spices to prepare marination.",
+            "Add paneer cubes, coat well, and rest for 20–30 minutes.",
+            "Roast paneer on tawa or bake in oven/air fryer until slightly charred.",
+            "Heat butter and oil in a pan; add cumin seeds and bay leaf.",
+            "Add onions and sauté till golden brown.",
+            "Add ginger-garlic paste and cook for a minute.",
+            "Add tomato puree, spices, and cook till oil separates.",
+            "Add a little water and simmer to form gravy.",
+            "Add roasted paneer tikka and cook for 2–3 minutes.",
+            "Add cream and kasuri methi; mix gently and turn off heat.",
+            "Serve hot with naan, roti, or jeera rice."
+        ]
+    },
+    ButterNaan: {
+        title: "Butter Naan",
+        category: "Punjabi",
+        image: "images/naan.jpg",
+        ingredients: [
+            "2 cups all-purpose flour (maida)",
+            "1/4 cup yogurt",
+            "1/2 cup warm milk",
+            "1 tsp sugar",
+            "1 tsp baking powder",
+            "1/4 tsp baking soda",
+            "2 tbsp butter (melted)",
+            "1 tbsp oil",
+            "Salt to taste",
+            "Water as needed",
+            "Butter for brushing"
+        ],
+        steps: [
+            "In a bowl, mix flour, sugar, baking powder, baking soda, and salt.",
+            "Add yogurt, warm milk, oil, and knead into a soft dough.",
+            "Cover the dough and rest for 1–2 hours.",
+            "Divide dough into small balls and roll into oval shapes.",
+            "Heat a tawa on medium-high; apply water on one side of the naan.",
+            "Place the wet side onto the tawa so it sticks.",
+            "Cook until bubbles appear, then flip tawa upside down to cook naan directly on flame.",
+            "Remove when golden spots appear.",
+            "Brush hot naan with butter and serve."
         ]
     },
     MasalaDosa: {
         title: "Masala Dosa",
-        category:"SouthIndian",
+        category: "SouthIndian",
         image: "images/dosa.jpg",
         ingredients: [
             "2 cups dosa batter",
@@ -147,7 +236,7 @@ const recipes = {
     },
     IdliSambhar: {
         title: "Idli Sambhar",
-        category:"SouthIndian",
+        category: "SouthIndian",
         image: "images/idli.jpg",
         ingredients: [
             "2 cups idli batter",
@@ -215,91 +304,91 @@ const recipes = {
 
 // --- Create Category Dropdown ---
 function createCategoryDropdown() {
-  const select = document.getElementById("categorySelect");
-  const categories = ["All", ...new Set(Object.values(recipes).map(r => r.category))];
+    const select = document.getElementById("categorySelect");
+    const categories = ["All", ...new Set(Object.values(recipes).map(r => r.category))];
 
-  select.innerHTML = "";
-  categories.forEach(cat => {
-    const option = document.createElement("option");
-    option.value = cat;
-    option.textContent = cat;
-    select.appendChild(option);
-  });
+    select.innerHTML = "";
+    categories.forEach(cat => {
+        const option = document.createElement("option");
+        option.value = cat;
+        option.textContent = cat;
+        select.appendChild(option);
+    });
 
-  select.addEventListener("change", e => {
-    filterByCategory(e.target.value);
-  });
+    select.addEventListener("change", e => {
+        filterByCategory(e.target.value);
+    });
 }
 
 // --- Display Recipes ---
 function displayRecipes(category = "All") {
-  const container = document.getElementById("recipeContainer");
-  container.innerHTML = "";
+    const container = document.getElementById("recipeContainer");
+    container.innerHTML = "";
 
-  const filtered = category === "All"
-    ? Object.entries(recipes)
-    : Object.entries(recipes).filter(([_, r]) => r.category === category);
+    const filtered = category === "All"
+        ? Object.entries(recipes)
+        : Object.entries(recipes).filter(([_, r]) => r.category === category);
 
-  filtered.forEach(([key, recipe]) => {
-    const card = document.createElement("div");
-    card.classList.add("recipe-card");
-    card.dataset.recipe = key;
-    card.innerHTML = `
+    filtered.forEach(([key, recipe]) => {
+        const card = document.createElement("div");
+        card.classList.add("recipe-card");
+        card.dataset.recipe = key;
+        card.innerHTML = `
       <img src="${recipe.image}" alt="${recipe.title}">
       <h3>${recipe.title}</h3>
       <p>${recipe.category}</p>
     `;
-    container.appendChild(card);
-  });
+        container.appendChild(card);
+    });
 
-  addRecipeCardListeners();
+    addRecipeCardListeners();
 }
 
 // --- Filter Recipes ---
 function filterByCategory(category) {
-  displayRecipes(category);
+    displayRecipes(category);
 }
 
 // --- Modal Functionality ---
 function addRecipeCardListeners() {
-  const cards = document.querySelectorAll(".recipe-card");
-  const modal = document.getElementById("recipeModal");
-  const closeBtn = document.querySelector(".close");
+    const cards = document.querySelectorAll(".recipe-card");
+    const modal = document.getElementById("recipeModal");
+    const closeBtn = document.querySelector(".close");
 
-  cards.forEach(card => {
-    card.addEventListener("click", () => {
-      const recipe = recipes[card.dataset.recipe];
-      document.getElementById("modalTitle").textContent = recipe.title;
-      document.getElementById("modalImage").src = recipe.image;
+    cards.forEach(card => {
+        card.addEventListener("click", () => {
+            const recipe = recipes[card.dataset.recipe];
+            document.getElementById("modalTitle").textContent = recipe.title;
+            document.getElementById("modalImage").src = recipe.image;
 
-      const ingList = document.getElementById("modalIngredients");
-      ingList.innerHTML = "";
-      recipe.ingredients.forEach(i => {
-        const li = document.createElement("li");
-        li.textContent = i;
-        ingList.appendChild(li);
-      });
+            const ingList = document.getElementById("modalIngredients");
+            ingList.innerHTML = "";
+            recipe.ingredients.forEach(i => {
+                const li = document.createElement("li");
+                li.textContent = i;
+                ingList.appendChild(li);
+            });
 
-      const stepList = document.getElementById("modalSteps");
-      stepList.innerHTML = "";
-      recipe.steps.forEach(s => {
-        const li = document.createElement("li");
-        li.textContent = s;
-        stepList.appendChild(li);
-      });
+            const stepList = document.getElementById("modalSteps");
+            stepList.innerHTML = "";
+            recipe.steps.forEach(s => {
+                const li = document.createElement("li");
+                li.textContent = s;
+                stepList.appendChild(li);
+            });
 
-      modal.style.display = "block";
+            modal.style.display = "block";
+        });
     });
-  });
 
-  closeBtn.onclick = () => (modal.style.display = "none");
-  window.onclick = e => {
-    if (e.target == modal) modal.style.display = "none";
-  };
+    closeBtn.onclick = () => (modal.style.display = "none");
+    window.onclick = e => {
+        if (e.target == modal) modal.style.display = "none";
+    };
 }
 
 // --- Initialize ---
 window.onload = () => {
-  createCategoryDropdown();
-  displayRecipes();
+    createCategoryDropdown();
+    displayRecipes();
 };

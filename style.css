@@ -133,7 +133,7 @@ body {
 .hero {
     text-align: center;
     padding: 100px 20px;
-    background: linear-gradient(rgba(0, 0, 0, 0.275), rgba(0, 0, 0, 0.365)), url('images/spices.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.275), rgba(0, 0, 0, 0.365)), url('spices.jpg') center/cover no-repeat;
     color: white;
     height: 800px;
     font-size: 20px;
@@ -441,4 +441,5 @@ button:hover {
     margin-left: 20px;
     text-decoration: underline 5px #e20c0c;
     text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+
 }

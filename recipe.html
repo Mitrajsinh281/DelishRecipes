@@ -4,10 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>All Recipes</title>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome -->
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -15,43 +18,49 @@
 
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="logo"><i class="fa-solid fa-utensils"></i>Delish Recipes</div>
+    <div class="logo">
+      <i class="fa-solid fa-utensils"></i> Delish Recipes
+    </div>
+
     <ul class="nav-links">
-      <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
-      <li><a href="search.html"><i class="fa-solid fa-magnifying-glass"></i>Search Recipe</a></li>
-      <li><a href="recipe.html"><i class="fa-solid fa-list"></i>List of Recipes</a></li>
-      <li><a href="support.html"><i class="fa-solid fa-user-tie"></i>Support</a></li>
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="search.html"><i class="fa-solid fa-magnifying-glass"></i> Search</a></li>
+      <li><a href="recipe.html"><i class="fa-solid fa-list"></i> Recipes</a></li>
+      <li><a href="support.html"><i class="fa-solid fa-user-tie"></i> Support</a></li>
     </ul>
   </nav>
 
-  <!-- Recipes Section -->
+  <!-- Recipe Section -->
   <section class="recipes-list">
     <h2>All Recipes</h2>
 
-    <!-- Category Filter Buttons -->
-    <div class="category-select-container">
-        <!-- <label for="categorySelect">Choose Category:</label> -->
-        <select id="categorySelect"></select>
+    <!-- Category Dropdown -->
+    <div class="category-container">
+      <select id="categorySelect"></select>
     </div>
 
-    <!-- Recipe Cards Container -->
+    <!-- Recipe Cards -->
     <div id="recipeContainer" class="recipe-grid"></div>
   </section>
 
-  <!-- Modal -->
+  <!-- Recipe Modal -->
   <div id="recipeModal" class="recipe-modal">
     <div class="recipe-content">
       <span class="close">&times;</span>
+
       <h2 id="modalTitle"></h2>
-      <img id="modalImage" src="" alt="" />
+      <img id="modalImage" src="" alt="" class="modal-img">
+
       <h3>Ingredients</h3>
       <ul id="modalIngredients"></ul>
+
       <h3>Steps</h3>
       <ol id="modalSteps"></ol>
     </div>
   </div>
 
+  <!-- Script -->
   <script src="recipe.js"></script>
+
 </body>
 </html>
-

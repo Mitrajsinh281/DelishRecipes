@@ -3,7 +3,7 @@ const recipes = {
     CreamyAlfredoPasta: {
         title: "Creamy Alfredo Pasta",
         category: "Italian",
-        image: "pasta.jpg",
+        image: "images/pasta.jpg",
         ingredients: [
             "200g penne pasta",
             "1 cup heavy cream",
@@ -21,7 +21,7 @@ const recipes = {
     PizzaMargherita: {
         title: "Pizza Margherita",
         category: "Italian",
-        image: "pizza.jpg",
+        image: "images/pizza.jpg",
         ingredients: [
             "Pizza dough",
             "1/2 cup tomato sauce",
@@ -39,7 +39,7 @@ const recipes = {
     VegHakkaNoodles: {
         title: "Veg Hakka Noodles",
         category: "Chinese",
-        image: "noodles.jpg",
+        image: "images/noodles.jpg",
         ingredients: [
             "200g Hakka noodles",
             "1 cup mixed vegetables",
@@ -57,7 +57,7 @@ const recipes = {
     GobiManchurian: {
         title: "Gobi Manchurian",
         category: "Chinese",
-        image: "manchurian.jpg",
+        image: "images/manchurian.jpg",
         ingredients: [
             "1 small cauliflower (cut into florets)",
             "1/2 cup cornflour",
@@ -81,7 +81,7 @@ const recipes = {
     GreekSalad: {
         title: "Greek Salad",
         category: "Salad",
-        image: "salad.jpg",
+        image: "images/salad.jpg",
         ingredients: [
             "1 cucumber (chopped)",
             "2 tomatoes (chopped)",
@@ -103,7 +103,7 @@ const recipes = {
     ChholeBh: {
     title: "Chhole Bhature",
     category: "Punjabi",
-    image: "cholebhat.jpg",
+    image: "images/cholebhat.jpg",
     ingredients: [
         "1 cup chickpeas (soaked overnight)",
         "2 onions, chopped",
@@ -148,7 +148,7 @@ const recipes = {
     PaneerTikkaMasala: {
         title: "Paneer Tikka Masala",
         category: "Punjabi",
-        image: "paneertikka.jpg",
+        image: "images/paneertikka.jpg",
         ingredients: [
             "250g paneer (cut into cubes)",
             "1/2 cup thick curd (for marination)",
@@ -187,7 +187,7 @@ const recipes = {
     ButterNaan: {
         title: "Butter Naan",
         category: "Punjabi",
-        image: "naan.jpg",
+        image: "images/naan.jpg",
         ingredients: [
             "2 cups all-purpose flour (maida)",
             "1/4 cup yogurt",
@@ -216,7 +216,7 @@ const recipes = {
     MasalaDosa: {
         title: "Masala Dosa",
         category: "SouthIndian",
-        image: "dosa.jpg",
+        image: "images/dosa.jpg",
         ingredients: [
             "2 cups dosa batter",
             "2 boiled potatoes",
@@ -259,7 +259,7 @@ const recipes = {
     ChocolateLavaCake: {
         title: "Chocolate Lava Cake",
         category: "Dessert",
-        image: "dessert.jpg",
+        image: "images/dessert.jpg",
         ingredients: [
             "100g dark chocolate",
             "1/4 cup butter",
@@ -279,7 +279,7 @@ const recipes = {
     GulabJamun: {
         title: "Gulab Jamun",
         category: "Dessert",
-        image: "gulabjamun.jpg",
+        image: "images/gulabjamun.jpg",
         ingredients: [
             "1 cup milk powder",
             "1/4 cup all-purpose flour",
@@ -384,4 +384,3 @@ window.onload = () => {
     displayRecipes();
     setupModalClose();
 };
-

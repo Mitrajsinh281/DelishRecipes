@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Carattere&family=Honk&family=Kaushan+Script&family=Meow+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Tangerine:wght@400;700&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap');
 
+/* Box-sizing reset - ye padding/border ko width ke andar rakhta hai,
+   isse overflow issues rukte hain (mobile responsiveness ka base fix) */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 /* General Page Styles */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     background: ivory;
     animation: fadeBody 1s ease-in-out;
+    overflow-x: hidden; /* accidental horizontal scroll rokta hai */
 }
 @keyframes fadeBody {
     from { opacity: 0; }
@@ -17,14 +26,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:#ff9966;
-    padding: 12px 30px;
+    background-color: #ff9966;
+    padding: 12px 20px;
     color: #fff;
     font-size: 18px;
     position: sticky;
     top: 0;
     z-index: 10;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    flex-wrap: wrap; /* mobile pe items niche wrap ho jayenge, overflow nahi hoga */
+    row-gap: 10px;
 }
 
 .logo {
@@ -36,15 +47,20 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
 }
 
 .nav-links a {
     text-decoration: none;
     color: #fff;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
     transition: 0.3s;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -79,12 +95,14 @@ body {
     background-color: #d7d494;
     margin: 40px auto;
     max-width: 1000px;
+    width: 90%;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
+/* purana translateX(300px) hover hata diya - wo section ko side mein
+   slide karke screen se bahar bhej deta tha, ye ek bug tha */
 .popular:hover {
-    transform: translateX(300px);
-    transition: 2s;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.18);
 }
 
 .popular h2 {
@@ -103,12 +121,13 @@ body {
 
 .popular .recipe-item {
     width: 250px;
+    max-width: 100%;
     box-shadow: 0 3px 8px rgba(216, 43, 43, 0.2);
     border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease;
-    background:#ffeaea;
+    background: #ffeaea;
 }
 
 .popular .recipe-item:hover {
@@ -127,8 +146,6 @@ body {
     font-family: 'Pacifico', cursive;
 }
 
-/* Fade-in animation for sections (already defined globally, just delay for each) */
-
 .popular.fade-in {
     animation-delay: 0.6s;
 }
@@ -137,15 +154,27 @@ body {
     animation-delay: 0.9s;
 }
 
-
 /* Hero Section */
 .hero {
     text-align: center;
     padding: 100px 20px;
     background: linear-gradient(rgba(0, 0, 0, 0.275), rgba(0, 0, 0, 0.365)), url('images/spices.jpg') center/cover no-repeat;
     color: white;
-    height: 800px;
+    min-height: 500px; /* fixed 800px hata diya, min-height + padding se
+                           content ke hisaab se adjust hoga */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-size: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(24px, 5vw, 40px); /* screen size ke hisaab se text scale hoga */
+}
+
+.hero p {
+    font-size: clamp(14px, 3vw, 20px);
 }
 
 .btn {
@@ -176,7 +205,7 @@ body {
 .search {
     text-align: center;
     background-color: ivory;
-    padding: 40px 0;
+    padding: 40px 15px;
 }
 
 .search h2 {
@@ -193,35 +222,30 @@ body {
 /* Recipes */
 .recipe-card {
     border-radius: 18px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-    margin: 40px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
     text-align: center;
     transition: transform 0.2s;
-    width: 800px;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    height: 100%;
 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
     padding: 10px;
-    background-color: rgba(255,255,255,0.35);
+    background-color: rgba(255, 255, 255, 0.75);
     animation: fadeIn 1s ease-in-out;
     backdrop-filter: blur(18px);
-
 }
 
 .recipe-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
 }
-
 
 .recipe-grid {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
     padding: 20px;
-    flex-wrap: wrap;
     justify-content: center;
     background-color: ivory;
 }
@@ -231,7 +255,6 @@ body {
     height: 180px;
     object-fit: cover;
     border-radius: 10px;
-
     transition: .4s ease;
 }
 .recipe-card:hover img {
@@ -239,14 +262,19 @@ body {
 }
 
 .recipe-card h3 {
-    font-size: 24px;
+    font-size: clamp(18px, 4vw, 24px);
     font-weight: 600;
     color: #d62828;
     margin: 10px 0 5px;
+    min-height: 2.4em; /* single-line aur 2-line titles ki height match
+                           karti hai, isse cards ek row mein equal lagte hain */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .recipe-card p {
-    font-size: 18px;
+    font-size: clamp(14px, 3vw, 18px);
     color: #444;
     font-weight: 500;
 }
@@ -254,7 +282,6 @@ body {
 /* Modal styling */
 .recipe-modal {
     display: none;
-    /* hidden by default */
     position: fixed;
     z-index: 10;
     left: 0;
@@ -270,11 +297,11 @@ body {
     color: #242222;
     margin: 50px auto;
     padding: 20px;
-    width: 80%;
+    width: 90%;
     max-width: 600px;
     border-radius: 18px;
     animation: popup .5s ease;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
 }
 @keyframes popup {
     from { transform: scale(0.8); opacity: 0; }
@@ -299,10 +326,12 @@ body {
     margin: 50px auto;
 
     background-color: rgba(163, 199, 218, 0.45);
-    padding: 35px;
+    padding: 30px 20px;
     border-radius: 18px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    width: 480px;
+    width: 90%;
+    max-width: 480px; /* fixed width: 480px ki jagah max-width - ab
+                          480px se chhote phone pe bhi cut nahi hoga */
     animation: fadeIn 1s ease-in-out;
 
     backdrop-filter: blur(10px);
@@ -312,11 +341,13 @@ body {
 .contact h2 {
     margin-bottom: 20px;
     color: #333;
+    text-align: center;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 input,
@@ -334,7 +365,6 @@ textarea:focus {
     border-color: #ff6f61;
     box-shadow: 0 0 8px rgba(255, 111, 97, .6);
 }
-
 
 button {
     width: 100%;
@@ -354,15 +384,14 @@ button:hover {
     box-shadow: 0 5px 15px rgba(255, 94, 98, 0.4);
 }
 
-
 .meadd {
-    width: 80%;
+    width: 90%;
     max-width: 700px;
     margin: 50px auto;
     text-align: center;
     background: rgba(255, 255, 255, 0.45);
     backdrop-filter: blur(10px);
-    padding: 25px;
+    padding: 25px 20px;
     border-radius: 15px;
     font-size: 18px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -375,11 +404,11 @@ button:hover {
 }
 
 .about-support {
-    width: 80%;
+    width: 90%;
     max-width: 900px;
     margin: 40px auto;
     background: white;
-    padding: 40px;
+    padding: 30px 20px;
     border-radius: 18px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     text-align: center;
@@ -387,7 +416,7 @@ button:hover {
 }
 
 .about-support h2 {
-    font-size: 26px;
+    font-size: clamp(20px, 4vw, 26px);
     color: #d82b2b;
     margin-bottom: 15px;
     text-decoration: underline 4px solid #ff5e62;
@@ -395,7 +424,7 @@ button:hover {
 }
 
 .about-support p {
-    font-size: 18px;
+    font-size: clamp(15px, 3vw, 18px);
     line-height: 1.8;
     color: #555;
     margin-bottom: 12px;
@@ -410,13 +439,14 @@ button:hover {
 }
 
 #categorySelect {
-   padding: 10px 15px;
+    padding: 10px 15px;
     border-radius: 12px;
     border: none;
     background: white;
     font-size: 18px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
     cursor: pointer;
+    max-width: 100%;
 }
 .recipes-list h2 {
     color: rgb(54, 38, 41);
@@ -424,8 +454,88 @@ button:hover {
     text-decoration: underline 5px #e20c0c;
     text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
-.recipes-list{
+.recipes-list {
     max-width: 1200px;
     margin: auto;
     padding: 30px 20px;
+}
+
+/* ================================
+   MOBILE MEDIA QUERIES
+   ================================ */
+
+/* Tablets aur chhote laptops */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .hero {
+        min-height: 400px;
+        padding: 60px 15px;
+    }
+
+    .recipe-card {
+        margin: 20px auto;
+        padding: 15px;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 15px;
+    }
+
+    .nav-links {
+        gap: 10px 15px;
+        font-size: 14px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .hero {
+        min-height: 320px;
+        padding: 40px 15px;
+    }
+
+    .popular {
+        padding: 40px 15px;
+    }
+
+    .popular .recipe-item {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .search input {
+        width: 100%;
+    }
+
+    .recipe-content {
+        margin: 30px auto;
+        padding: 15px;
+    }
+
+    .category-container {
+        margin-left: 10px;
+    }
+
+    .recipes-list h2 {
+        margin-left: 10px;
+        font-size: 20px;
+    }
 }

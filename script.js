@@ -1,15 +1,27 @@
-// Simple search function
+// Simple search function (with debounce - har keystroke pe turant filter
+// nahi chalega, 250ms rukne ke baad chalega - isse search smooth lagega
+// especially jab bahut saari cards ho)
 const searchInput = document.getElementById("searchInput");
 const recipeCards = document.querySelectorAll(".recipe-card");
 
+function debounce(fn, delay) {
+    let timer;
+    return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(...args), delay);
+    };
+}
+
 if (searchInput) {
-    searchInput.addEventListener("keyup", () => {
+    const runSearch = () => {
         const value = searchInput.value.toLowerCase();
         recipeCards.forEach(card => {
             const name = card.querySelector("h3").innerText.toLowerCase();
             card.style.display = name.includes(value) ? "block" : "none";
         });
-    });
+    };
+
+    searchInput.addEventListener("keyup", debounce(runSearch, 250));
 }
 
 

@@ -78,8 +78,8 @@ const recipes = {
             "Add fried florets, toss everything together, and serve hot."
         ]
     },
-    Chillipaneer: {
-        title: "Chillipaneer",
+    ChilliPaneer: {
+        title: "Chilli Paneer",
         category: "Chinese",
         image: "images/chillipaneer.jpg",
         ingredients: [
@@ -358,7 +358,7 @@ function displayRecipes(category = "All") {
 
     container.innerHTML = filtered.map(([key, r]) => `
         <div class="recipe-card" data-recipe="${key}">
-            <img src="${r.image}" alt="${r.title}">
+            <img src="${r.image}" alt="${r.title}" loading="lazy">
             <h3>${r.title}</h3>
             <p>${r.category}</p>
         </div>

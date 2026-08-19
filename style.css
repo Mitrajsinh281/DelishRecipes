@@ -243,7 +243,11 @@ body {
 
 .recipe-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    /* auto-fit ki jagah auto-fill use kiya - auto-fit khaali columns ko
+       collapse karke unki jagah bache hue card ko de deta tha, isliye jab
+       search se sirf 1 result bachta tha, wo poori width le leta tha.
+       auto-fill columns ko fixed rakhta hai chahe items kam hon. */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
     padding: 20px;
     justify-content: center;

@@ -78,8 +78,8 @@ const recipes = {
             "Add fried florets, toss everything together, and serve hot."
         ]
     },
-    ChilliPaneer: {
-        title: "Chilli Paneer",
+    Chillipaneer: {
+        title: "Chillipaneer",
         category: "Chinese",
         image: "images/chillipaneer.jpg",
         ingredients: [
